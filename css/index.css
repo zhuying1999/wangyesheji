@@ -1,0 +1,191 @@
+body {
+	/*去掉浏览器默认的8px的间隙*/
+    margin: 0;
+    background-color: #f1efe3;
+}
+/*定义公共类inner，用来放置内容区，内容区宽度固定，居中。凝胶布局的关键代码！*/
+div.inner {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*页眉区 header*/
+div.header {
+    height: 120px;
+	/*背景图像默认会重复插入*/
+    background-image: url(../img/banner.jpg);
+}
+/*导航栏的格式*/
+div.nav{
+    height: 20px;
+}
+div.nav ul.wp_nav{
+    margin: 10px 120px;
+    padding: 0px;
+    height: 20px;
+}
+li.nav-item{
+	display: inline-block;
+}
+div.nav a{
+    text-decoration:none;  /*超链接无下划线*/
+    color: #3f2863; 
+    margin:0 40px;
+}
+div.nav a.active{
+    color: #ff7f21;
+}
+div.content{
+    margin: 20px 0 0 0;
+    background-color: white;
+    padding: 80px 0 20px 0;
+}
+div.content div.list-item div.item{
+    margin-bottom: 80px; 
+    height: 300px;
+}
+div.content div.list-item div.item div.item-left{
+    /*布局的关键代码，浮动元素*/
+    float: left;
+    
+}
+div.content div.list-item div.item div.item-left img{
+    height: 300px;
+}
+div.content div.list-item div.item div.item-right{
+    padding :20px 0 0 100px;
+    margin:20px   0 0 400px;
+}
+div.item-right h3{
+    font-size: 24px; 
+    margin:20px 0;
+}
+div.item-right .go_icon{
+    width: 33px; 
+    height: 11px; 
+    background: url(../img/jiantou.png) center center no-repeat; 
+    display: block; 
+    padding:10px 0; 
+    margin-top: 16px;
+}
+div.item-right p{
+    line-height: 37px;
+}
+div.footer div.inner{
+    text-align: center;
+}
+div.content div.title{
+    text-align: center; /*位于中央*/
+    margin-bottom: 40px;
+}
+div.content div.inner .littletitle{
+    text-indent: 2em;
+    /*em是相对单位，2em即现在一个字大小的两倍*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:lighter;
+}
+div.center{
+    text-align:center /*水平居中*/
+}
+div.content div.inner .dimg{
+    width:500px;
+    height: 400px;
+}
+iframe{
+    width:800px;
+    height: 700px;
+}
+#handout_wrap_inner{
+    margin: 0 auto; /*让iframe居中*/
+    width: 800px!important;  /*为了修改内联样式*/
+}
+div.photos{
+    width:300px;
+    height: 200px;
+    text-align: center;
+}
+td img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+}
+div.cont-text{
+    margin-top: 20px;
+    text-align: center;
+}
+div.cont-text div.date{
+    font-size: 16px;
+    color: crimson;
+    margin-bottom: 30px;
+}
+div.cont-text .address{
+    width:16px;
+    height: 16px;
+    margin-right: 10px;
+}
+div#calendar {
+    width: 900px;
+    margin: 0 auto;
+    font-size: 14px;
+}
+.form1{
+    width:300px;
+    height:950px;
+}
+div.left{
+    width:300px;
+    height:950px;
+    background-color:#666666;
+    float:left;
+    color :white;
+    text-align: center;
+}
+div.left div#selfphoto{
+    padding-top: 10px;
+    margin: 0 auto; /*居中*/
+    width: 100px;
+    height: 150px;
+   
+}
+.form1  img{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+}
+div.biaoti{
+    width: 300px;
+    height: 50px;
+    line-height: 50px;/*垂直居中*/
+}
+div.top{
+    height:50px;
+    background-color:#333333;
+    color:white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+}
+div.right{
+    height: 950px;
+    width: 700px;
+    background-color: #669999;
+    margin-left: 300px;
+    text-align: left;
+    color: black;
+}
+div.detail{
+    margin: 40px 0 40px 0;
+    border:1px solid #ccc; 
+    border-left:none;
+    border-right:none;
+}
+div.detail ul{
+    list-style-type:decimal;
+    margin:30px;
+}
+div.detail ul li{
+    margin-bottom: 10px;
+}

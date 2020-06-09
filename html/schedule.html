@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计划表 </title>
+    <link rel="stylesheet" href="../css/index.css">
+    <!--FullCalendar CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.print.min.css" rel="stylesheet" media="print" />
+</head>
+<body>
+    <div class="header">
+	    <!--每个区都有一个公共类inner，用来放置内容，内容区宽度固定，居中-->
+        <div class="inner">
+            <img src="../img/logo.png" style="margin-top: 30px;margin-left: 100px;">
+        </div>
+    </div>
+    <!--end of header-->
+    <!--导航区nav-->
+    <div class="nav">
+        <div class="inner">      
+            <ul class="wp_nav">
+                <li class="nav-item">
+                    <img src="../img/翅膀-左.png" style="width: 80px; height: 20px;">
+                </li>
+                <li class="nav-item">                    
+                    <a href="index.html" >
+                        <img src="../img/工作日志 .png" style="width: 15px; height: 15px;">
+                        文章
+                    </a>
+                </li>
+                <li class="nav-item">                    
+                    <a href="information.html" >
+                        <img src="../img/人员管理.png"  style="width: 15px; height: 15px;">
+                        个人简历
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="schedule.html" class="active">
+                        <img src="../img/预约.png"  style="width: 15px; height: 15px;">
+                        计划表
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photo.html" >
+                        <img src="../img/订货.png"  style="width: 15px; height: 15px;">
+                        相册
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <img src="../img/翅膀-右.png" style="width: 80px; height: 20px;">
+                </li>
+            </ul>
+        </div>
+    </div>
+     <!--end of nav-->
+    <!--内容区-->
+    <div class="content">
+        <div class="inner">
+            <div id="calendar"></div>
+        </div>
+    </div>
+    <!--end of content-->
+    <!--footer-->
+    <div class="footer">
+        <div class="inner">
+            <p style="font-family:Arial,SimSun,sans-serif;">
+                Copyright©zhuying All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+ <!--jQuery/jQuery-ui/moment-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+ <!--FullCalendar/本地脚本js-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/locale/zh-cn.js"></script>
+ <script type="text/javascript">
+    /* jQuery载入 */
+
+    $(document).ready(function() {
+        /**
+         * 定义date，d，m,y
+         */
+        var date = new Date();
+        var d = date.getDate();
+        var m = date.getMonth();
+        var y = date.getFullYear();
+        /**
+         * 初始化fullCalendar，便于后续其他js的调用
+         */
+        var calendar = $('#calendar').fullCalendar({
+            /**head参数 */
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            /**[defaultView 默认视图] */
+            defaultView: 'month',
+            /**[selectable 是否可选]*/
+            selectable: true,
+            selectHelper: true,
+
+            select: function(start, end, allDay) {
+                /*
+                    after selection user will be promted for enter title for event.
+                */
+                var title = prompt('标题:');
+                /*
+                    if title is enterd calendar will add title and event into fullCalendar.
+                */
+                if (title) {
+                    calendar.fullCalendar('renderEvent', {
+                            title: title,
+                            start: start,
+                            end: end,
+                            allDay: allDay
+                        },
+                        true // make the event "stick"
+                    );
+                }
+                calendar.fullCalendar('unselect');
+            },
+            /*
+                editable: true allow user to edit events.
+            */
+            editable: true,
+            /*
+                events is the main option for calendar.
+                for demo we have added predefined events in json object.
+            */
+            events: [{
+                title: '完成网页设计',
+                start: new Date(y, m, 1,8,0),
+                end: new Date(y, m, 2,18,0)
+
+            }, {
+                title: '夏令营材料准备',
+                start: new Date(y, m, 2,20,0),
+                end: new Date(y, m, 4,12,0)
+            }, {
+                title: '完成商业数据分析论文',
+                start: new Date(y, m, 5, 14, 0),
+                end: new Date(y, m, 9,12,0)
+            }, {
+                title: '完成嵌入式开发',
+                start: new Date(y, m,9, 14, 0),
+                end: new Date(y, m, 14,12,0)
+            }, {
+                title: '完成大创项目',
+                start: new Date(y, m, 15, 14, 30),
+                end: new Date(y, m, 27,12,0)
+            }, {
+                title: '复习，准备保研事项',
+                start: new Date(y, m, 28, 14, 0),
+                end: new Date(y, m+3, 30, 14, 0)
+            }]
+        });
+
+    });
+    </script>

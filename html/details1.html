@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据库</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <div class="header">
+	    <!--每个区都有一个公共类inner，用来放置内容，内容区宽度固定，居中-->
+        <div class="inner">
+            <img src="../img/logo.png" style="margin-top: 30px;margin-left: 100px;">
+        </div>
+    </div>
+    <!--end of header-->
+    <!--导航区nav-->
+    <div class="nav">
+        <div class="inner">      
+            <ul class="wp_nav">
+                <li class="nav-item">
+                    <img src="../img/翅膀-左.png" style="width: 80px; height: 20px;">
+                </li>
+                <li class="nav-item">                    
+                    <a href="index.html" class="active">
+                        <img src="../img/工作日志 .png" style="width: 15px; height: 15px;">
+                        文章
+                    </a>
+                </li>
+                <li class="nav-item">                    
+                    <a href="information.html" >
+                        <img src="../img/人员管理.png"  style="width: 15px; height: 15px;">
+                        个人简历
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="schedule.html" >
+                        <img src="../img/预约.png"  style="width: 15px; height: 15px;">
+                        计划表
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photo.html" >
+                        <img src="../img/订货.png"  style="width: 15px; height: 15px;">
+                        相册
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <img src="../img/翅膀-右.png" style="width: 80px; height: 20px;">
+                </li>
+            </ul>
+        </div>
+    </div>
+     <!--end of nav-->
+    <!--内容区-->
+    <div class="content">
+        <div class="inner">
+            <div class="title">
+                <h2>《数据库管理实务》实验报告</h2>
+            </div>
+            <h3>1. 掌握系统存储过程和自定义存储过程的使用方法</h3>
+            <h4 class="littletitle">（1）使用系统存储过程完成操作，将家电进销管理数据库中的“商品”表名称改为“商品信息”。</h4>
+            <div class="center" >
+                <img src="../img/details11.png" class="dimg">
+            </div>
+            <h4 class="littletitle">(2)创建一个名为proc1_zhuying的存储过程，该存储过程可以通过输入一个工号，查询该员工经手的所有销售单的信息，显示：销售单号，销售日期。并通过输入某一工号（任意）来验证存储过程的效果。</h4>
+            <div class="center" >
+                <img src="../img/details12.png" class="dimg">
+            </div>
+            <h3>2.掌握触发器的原理和使用方法</h3>
+            <h4 class="littletitle">(1)创建一个名为good_info的触发器，当向销售单表插入一条记录时，判断其销售日期字段的值是否在’2018-12-1’之前，如果早于这个日期，则显示消息“无法插入一个月前的交易信息”，并阻止本次插入操作。并通过向销售单表插入记录来验证触发器的效果（注意插入记录时字段应满足参照完整性约束）。</h4>
+            <div class="center" >
+                <img src="../img/details13.png" class="dimg">
+            </div>
+        </div>
+    </div>
+     <!--end of content-->
+    <!--footer-->
+    <div class="footer">
+        <div class="inner">
+            <p style="font-family:Arial,SimSun,sans-serif;">
+                Copyright©zhuying All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
